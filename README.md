@@ -1,10 +1,10 @@
-# 🎨 Generador de Fractales con Números Complejos
+# Generador de Fractales con Números Complejos
 
 Este proyecto permite generar imágenes de fractales a partir de polinomios complejos definidos por el usuario. Utiliza operaciones matemáticas sobre números complejos y un sistema de convergencia de Newton para visualizar en el plano complejo.
 
 ---
 
-## 📁 Archivos del Proyecto
+## Archivos del Proyecto
 
 - `Proyecto.py`: Implementa las clases para números complejos, polinomios, y el generador de fractales.
 - `pruebas.py`: Contiene pruebas unitarias que verifican el correcto funcionamiento de las clases.
@@ -12,26 +12,76 @@ Este proyecto permite generar imágenes de fractales a partir de polinomios comp
 
 ---
 
-## 📄 Formato del archivo `parametros.txt`
+## Estructura del Código
+
+### Clase `NumeroComplejo`
+
+- `__init__`
+- `_verificar_instancia`
+- `__add__`, `__sub__`, `__mul__`, `__pow__`
+- `modulo`
+- `__repr__`
+- `_copia`
+
+### Clase `PolinomioComplejo`
+
+- `__init__`
+- `evaluar`
+
+### Clase `ParsearPolinomios`
+
+- `cadena_a_complejo`
+- `parsear_complejo`
+- `parsear_terminos`
+- `construir_coeficientes`
+- `parsear_polinomio`
+
+### Clase `BuscarPatrones`
+
+- `__init__`
+- `_limpiar_expresion`
+- `_extraer_complejo`
+- `_extraer_exponente`
+- `_recorrer_expresion`
+- `encontrar_todo`
+
+### Clase `LecturaValores`
+
+- `__init__`
+- `interpretar_valor`
+- `leer_configuracion_fractal`
+
+### Clase `GeneradorFractales`
+
+- `__init__`
+- `_mapear_pixel_a_complejo`
+- `determinar_color_pixel`
+- `_calcular_color`
+- `generar`
+- `guardar_imagen`
+
+---
+
+## Formato del archivo `parametros.txt`
 
 Este archivo contiene los parámetros que el programa lee para generar la imagen fractal:
 
 ```txt
-min : -2-2i               # Esquina inferior izquierda del plano complejo
-max : 2+2i                # Esquina superior derecha del plano complejo
-width : 1024              # Ancho de la imagen en píxeles
-height : 1024             # Alto de la imagen en píxeles
-degree : 2                # Grado del polinomio
-polynomial : (1+0i)z^2 + (-1+0i)   # Polinomio complejo en notación personalizada
-iterations : 30           # Máximo de iteraciones para determinar convergencia
-threshold : 3             # Distancia máxima para considerar convergencia a una raíz
-color : (255,100,50)      # Color base del fractal (puede modificarse)
-name : fractal3.png       # Nombre del archivo de salida
+min : -2-2i
+max : 2+2i
+width : 1024
+height : 1024
+degree : 2
+polynomial : (1+0i)z^2 + (-1+0i)
+iterations : 30
+threshold : 3
+color : (255,100,50)
+name : fractal3.png
 ```
 
 ---
 
-## 🖼️ Generación del fractal
+## Generación del fractal
 
 1. Edita `parametros.txt` con tus valores deseados.
 2. Ejecuta el archivo `Proyecto.py`:
@@ -44,7 +94,7 @@ Esto generará una imagen PNG del fractal con las especificaciones dadas.
 
 ---
 
-## 🧪 Pruebas unitarias
+## Pruebas unitarias
 
 Para verificar la correcta implementación de las clases y métodos:
 
@@ -59,10 +109,10 @@ Las pruebas cubren:
 
 ---
 
-## 🧠 Requisitos
+## Requisitos
 
 - Python 3.7 o superior
-- Librería **Pillow** para manipulación de imágenes:
+- Librería Pillow para manipulación de imágenes:
 
 ```bash
 pip install pillow
@@ -70,12 +120,6 @@ pip install pillow
 
 ---
 
-## 💡 Créditos
+## Créditos
 
 Este proyecto fue desarrollado como parte de una práctica de visualización de fractales y álgebra compleja.
-
----
-
-## ✅ Ejemplo visual
-
-(Si lo deseas, aquí puedes añadir una imagen generada como ejemplo)
